@@ -1,6 +1,6 @@
-=====
+======================
 django-yandex-checkout
-=====
+======================
 
 django-yandex-checkout is a Django app to process payments with Yandex Kassa
 
@@ -23,3 +23,15 @@ Quick start
 4. Set up your webhook on Yandex Kassa profile page
 
 5. Use ngrok or localtunnel to debug and test your project
+
+Process payments responses
+--------------------------
+
+To process responses after paying you should use signals::
+
+    from yandex_chekout.signals import payment_status_changed
+    from django.dispatch import receiver
+
+    @receiver(payment_status_changed)
+    def my_callback(sender, **kwargs):
+        print("Payment status changed!")
