@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: django-polls
+Version: 0.1
+Summary: A Django app to conduct Web-based polls.
+Home-page: https://www.example.com/
+Author: Your Name
+Author-email: yourname@example.com
+License: BSD-3-Clause  # Example license
+Description: =====
+        django-yandex-checkout
+        =====
+        
+        django-yandex-checkout is a Django app to process payments with Yandex Kassa
+        
+        Quick start
+        -----------
+        
+        1. Add "django_yandex_checkout" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'django_yandex_checkout',
+            ]
+        
+        2. Include the polls URLconf in your project urls.py like this::
+        
+            path('django_yandex_checkout/', include('django_yandex_checkout.urls')),
+        
+        3. Run ``python manage.py migrate`` to create the django_yandex_checkout models.
+        
+        4. Set up your webhook on Yandex Kassa profile page
+        
+        5. Use ngrok or localtunnel to debug and test your project
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content

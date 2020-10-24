@@ -1,0 +1,2 @@
+django_yandex_checkout
+yandex_checkout
