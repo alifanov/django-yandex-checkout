@@ -35,3 +35,12 @@ To process responses after paying you should use signals::
     @receiver(payment_status_changed)
     def my_callback(sender, **kwargs):
         print("Payment status changed!")
+
+Create payment
+--------------
+
+To create payment use POST query::
+    curl -X POST -d '{"payment_total_sum": 100.0}' http://localhost:8000/yandex-checkut/payment-create/
+    {
+        'confirmation_url': 'https://...'
+    }

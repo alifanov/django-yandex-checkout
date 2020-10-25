@@ -39,9 +39,13 @@ def yandex_kassa_webhook_handler(request):
 
 @api_view(['POST'])
 def create_payment(request):
+    if not 'payment_total_sum' in request.data:
+        return JsonResponse({'error': 'payment_total_sum not found in parameters'})
+
+    payment_total_sum = request.data['payment_total_sum']
     payment = Payment.create({
             "amount": {
-            "value": '100.0',
+            "value": payment_total_sum,
             "currency": 'RUB'
         },
         "confirmation": {
