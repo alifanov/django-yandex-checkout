@@ -1,6 +1,7 @@
 .vscode
 Makefile
 manage.py
+django_yandex_checkout_test
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

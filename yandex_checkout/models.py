@@ -1,4 +1,7 @@
+import uuid
+
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class YandexKassaPayment(models.Model):
@@ -14,7 +17,7 @@ class YandexKassaPayment(models.Model):
         related_name='yandex_kassa_payments'
     )
     period = models.CharField(default='month', max_length=255)
-    status = models.CharField(max_length=255, default=YandexKassaPayment.STATUS_PENDING)
+    status = models.CharField(max_length=255, default='pending')
     description = models.TextField(blank=True, null=True)
     value = models.PositiveIntegerField()
     currency = models.CharField(max_length=255)
