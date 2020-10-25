@@ -1,11 +1,7 @@
 import json
 import uuid
 
-import django_rq
-
 from datetime import datetime, timedelta
-
-from django_telethon_authorization.helpers import parse_json_payload
 
 from rest_framework.decorators import api_view
 from rest_framework.decorators import authentication_classes, permission_classes
@@ -30,7 +26,7 @@ def yandex_kassa_webhook_handler(request):
     ykp = YandexKassaPayment.objects.filter(id=payment_id).first()
     if ykp:
         if ykp.status != status:
-            payment_status_changed.send(sender=YandexKassaPayment, status=status, data)
+            payment_status_changed.send(sender=YandexKassaPayment, status=status, data=data)
 
         ykp.status = status
         ykp.save()
@@ -55,7 +51,6 @@ def create_payment(request):
         "capture": True,
     }, uuid.uuid4())
     ykp = YandexKassaPayment.objects.create(
-        period=period,
         id=payment.id,
         user=request.user,
         status=payment.status,

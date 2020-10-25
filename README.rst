@@ -20,16 +20,22 @@ Quick start
 
 3. Run ``python manage.py migrate`` to create the django_yandex_checkout models.
 
-4. Set up your webhook on Yandex Kassa profile page
+4. Add settings in settings.py::
 
-5. Use ngrok or localtunnel to debug and test your project
+    YANDEX_KASSA_SHOP_ID = '...'
+    YANDEX_KASSA_SECRET_KEY = '...'
+    YANDEX_KASSA_RETURN_URL = '...'
+
+5. Set up your webhook on Yandex Kassa profile page
+
+6. Use ngrok or localtunnel to debug and test your project
 
 Process payments responses
 --------------------------
 
 To process responses after paying you should use signals::
 
-    from yandex_chekout.signals import payment_status_changed
+    from django_yandex_checkout.signals import payment_status_changed
     from django.dispatch import receiver
 
     @receiver(payment_status_changed)

@@ -16,7 +16,6 @@ class YandexKassaPayment(models.Model):
         on_delete=models.DO_NOTHING,
         related_name='yandex_kassa_payments'
     )
-    period = models.CharField(default='month', max_length=255)
     status = models.CharField(max_length=255, default='pending')
     description = models.TextField(blank=True, null=True)
     value = models.PositiveIntegerField()
