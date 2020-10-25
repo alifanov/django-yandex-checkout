@@ -44,7 +44,7 @@ To create payment use POST query::
     curl  -X POST \
           -H "Content-Type: application/json"\
           -d '{"payment_total_sum": 100.0}'\
-        http://localhost:8000/yandex-checkut/payment-create/
+        http://localhost:8000/yandex-checkout/payment-create/
     {
         'confirmation_url': 'https://...'
     }
